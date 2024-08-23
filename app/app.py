@@ -3,14 +3,14 @@ from streamlit_chat import message
 import os
 
 def main():
-    st.set_page_config(page_title="Chatbot App", layout="wide")
+    st.set_page_config(page_title="ERAG", layout="wide")
 
     # Sidebar
     with st.sidebar:
-        st.title("Chatbot Settings")
+        st.title("Configuration")
         
         # Radio buttons
-        option = st.radio("Choose an option:", ("Option 1", "Option 2"))
+        option = st.radio("Choose an option:", ("URL", "Document"))
         
         # File uploader
         uploaded_file = st.file_uploader("Upload a document", type=["txt", "pdf", "docx"])
@@ -20,12 +20,9 @@ def main():
         
         # Dropdown for model selection
         model = st.selectbox("Select a model:", ("Model 1", "Model 2", "Model 3"))
-        
-        st.write(f"Selected option: {option}")
-        st.write(f"Selected model: {model}")
 
     # Main chat interface
-    st.title("Chatbot")
+    st.title("ERAG: Enhanced Document Querying")
 
     # Initialize chat history
     if "messages" not in st.session_state:
